@@ -1,5 +1,5 @@
  // Fix pages to fit the viewport at all times
- var initialLoad = '';
+ var pageState;
       $(function() {
         pageState = 'exterior';
         resizeDiv();
@@ -37,10 +37,9 @@
         nbh = navBarHeight;
         $('#exterior-page, #interior-page').css({'height': vph + 'px'});
         ih = (vph-nbh);
-        if(initialLoad == '') {
+        if(pageState == 'exterior') {
           $('#interior-page').css({'height': vph + 'px'});
           $('#interior-page').css({'bottom': -ih + 'px'});
-          initialLoad = 'done';
         }
       }
 
